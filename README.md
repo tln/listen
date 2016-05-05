@@ -1,8 +1,12 @@
-:exclamation: Listen is currently accepting more maintainers. Please [read this](https://github.com/guard/guard/wiki/Maintainers) if you're interested in joining the team.
+# This is a Fork
+
+This is a fork of the official version `3.0.x` branch. Sass need to support older
+versions of ruby than Guard wants to support on an ongoing basis, so we are releasing
+updates as needed for critical fixes and will support ruby 2.0 and
+greater for as long as Sass users need it. Our blog has more information about
+ths [Ruby version policy for Sass](http://blog.sass-lang.com/posts/560719).
 
 # Listen
-
-[![Gem Version](https://badge.fury.io/rb/listen.png)](http://badge.fury.io/rb/listen) [![Build Status](https://travis-ci.org/guard/listen.png)](https://travis-ci.org/guard/listen) [![Dependency Status](https://gemnasium.com/guard/listen.png)](https://gemnasium.com/guard/listen) [![Code Climate](https://codeclimate.com/github/guard/listen.png)](https://codeclimate.com/github/guard/listen) [![Coverage Status](https://coveralls.io/repos/guard/listen/badge.png?branch=master)](https://coveralls.io/r/guard/listen)
 
 The Listen gem listens to file modifications and notifies you about the changes.
 

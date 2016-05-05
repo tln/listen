@@ -133,8 +133,8 @@ CURRENT_VERSION = Listen::VERSION
 def releaser
   $releaser ||= Releaser.new(
     project_name: PROJECT_NAME,
-    gem_name: "listen",
-    github_repo: "guard/listen",
+    gem_name: "sass-listen",
+    github_repo: "sass/listen",
     version: CURRENT_VERSION)
 end
 

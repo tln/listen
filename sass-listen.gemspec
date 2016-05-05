@@ -4,15 +4,14 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'listen/version'
 
 Gem::Specification.new do |s|
-  s.name        = 'listen'
+  s.name        = 'sass-listen'
   s.version     = Listen::VERSION
   s.license     = 'MIT'
   s.author      = 'Thibaud Guillaume-Gentil'
   s.email       = 'thibaud@thibaud.gg'
-  s.homepage    = 'https://github.com/guard/listen'
-  s.summary     = 'Listen to file modifications'
-  s.description = 'The Listen gem listens to file modifications and '\
-    'notifies you about the changes. Works everywhere!'
+  s.homepage    = 'https://github.com/sass/listen'
+  s.summary     = 'Fork of guard/listen'
+  s.description = 'This fork of guard/listen provides a stable API for users of the ruby Sass CLI'
 
   s.files        = `git ls-files -z`.split("\x0").select do |f|
     /^(?:bin|lib)\// =~ f
