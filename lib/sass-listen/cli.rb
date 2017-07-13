@@ -1,5 +1,5 @@
 require 'thor'
-require 'listen'
+require 'sass-listen'
 require 'logger'
 
 module Listen

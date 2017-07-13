@@ -1,8 +1,8 @@
 require 'logger'
-require 'listen/logger'
-require 'listen/listener'
+require 'sass-listen/logger'
+require 'sass-listen/listener'
 
-require 'listen/internals/thread_pool'
+require 'sass-listen/internals/thread_pool'
 
 # Always set up logging by default first time file is required
 #

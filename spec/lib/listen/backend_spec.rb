@@ -1,4 +1,4 @@
-require 'listen/backend'
+require 'sass-listen/backend'
 
 RSpec.describe Listen::Backend do
   let(:dir1) { instance_double(Pathname, 'dir1', to_s: '/foo/dir1') }

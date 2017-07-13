@@ -1,7 +1,7 @@
 require 'thread'
 
 require 'timeout'
-require 'listen/event/processor'
+require 'sass-listen/event/processor'
 
 module Listen
   module Event

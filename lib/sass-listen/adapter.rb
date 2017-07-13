@@ -1,9 +1,9 @@
-require 'listen/adapter/base'
-require 'listen/adapter/bsd'
-require 'listen/adapter/darwin'
-require 'listen/adapter/linux'
-require 'listen/adapter/polling'
-require 'listen/adapter/windows'
+require 'sass-listen/adapter/base'
+require 'sass-listen/adapter/bsd'
+require 'sass-listen/adapter/darwin'
+require 'sass-listen/adapter/linux'
+require 'sass-listen/adapter/polling'
+require 'sass-listen/adapter/windows'
 
 module Listen
   module Adapter

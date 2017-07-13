@@ -1,4 +1,4 @@
-require 'listen/event/queue'
+require 'sass-listen/event/queue'
 
 # TODO: not part of listener really
 RSpec.describe Listen::Event::Queue do

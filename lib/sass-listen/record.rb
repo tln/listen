@@ -1,6 +1,6 @@
 require 'thread'
-require 'listen/record/entry'
-require 'listen/record/symlink_detector'
+require 'sass-listen/record/entry'
+require 'sass-listen/record/symlink_detector'
 
 module Listen
   class Record

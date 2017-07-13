@@ -1,5 +1,5 @@
 require 'thread'
-require 'listen/internals/thread_pool'
+require 'sass-listen/internals/thread_pool'
 
 module Listen
   module Adapter

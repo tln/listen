@@ -1,6 +1,6 @@
-require 'listen/options'
-require 'listen/record'
-require 'listen/change'
+require 'sass-listen/options'
+require 'sass-listen/record'
+require 'sass-listen/change'
 
 module Listen
   module Adapter

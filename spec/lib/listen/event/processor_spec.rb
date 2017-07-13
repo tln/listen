@@ -1,5 +1,5 @@
-require 'listen/event/processor'
-require 'listen/event/config'
+require 'sass-listen/event/processor'
+require 'sass-listen/event/config'
 
 RSpec.describe Listen::Event::Processor do
   let(:event_queue) { instance_double(::Queue, 'event_queue') }

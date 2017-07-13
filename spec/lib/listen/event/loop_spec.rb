@@ -1,7 +1,7 @@
 require 'thread'
-require 'listen/event/config'
-require 'listen/event/loop'
-require 'listen/internals/thread_pool'
+require 'sass-listen/event/config'
+require 'sass-listen/event/loop'
+require 'sass-listen/internals/thread_pool'
 
 RSpec.describe Listen::Event::Loop do
   let(:config) { instance_double(Listen::Event::Config, 'config') }

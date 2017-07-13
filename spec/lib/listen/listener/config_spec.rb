@@ -1,4 +1,4 @@
-require 'listen/listener/config'
+require 'sass-listen/listener/config'
 RSpec.describe Listen::Listener::Config do
   describe 'options' do
     context 'custom options' do

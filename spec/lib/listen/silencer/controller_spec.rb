@@ -1,4 +1,4 @@
-require 'listen/silencer/controller'
+require 'sass-listen/silencer/controller'
 
 RSpec.describe Listen::Silencer::Controller do
   let(:silencer) { instance_double(Listen::Silencer) }

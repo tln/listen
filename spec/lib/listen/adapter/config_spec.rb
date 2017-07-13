@@ -1,4 +1,4 @@
-require 'listen/adapter/config'
+require 'sass-listen/adapter/config'
 
 RSpec.describe Listen::Adapter::Config do
   let(:directories) { [path1, path2] }

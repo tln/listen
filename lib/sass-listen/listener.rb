@@ -1,21 +1,21 @@
 require 'English'
 
-require 'listen/version'
+require 'sass-listen/version'
 
-require 'listen/backend'
+require 'sass-listen/backend'
 
-require 'listen/silencer'
-require 'listen/silencer/controller'
+require 'sass-listen/silencer'
+require 'sass-listen/silencer/controller'
 
-require 'listen/queue_optimizer'
+require 'sass-listen/queue_optimizer'
 
-require 'listen/fsm'
+require 'sass-listen/fsm'
 
-require 'listen/event/loop'
-require 'listen/event/queue'
-require 'listen/event/config'
+require 'sass-listen/event/loop'
+require 'sass-listen/event/queue'
+require 'sass-listen/event/config'
 
-require 'listen/listener/config'
+require 'sass-listen/listener/config'
 
 module Listen
   class Listener

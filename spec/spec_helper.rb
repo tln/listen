@@ -1,9 +1,9 @@
 # TODO: reduce requires everwhere and be more strict about it
-require 'listen'
+require 'sass-listen'
 
 Listen.logger.level = Logger::WARN unless ENV['LISTEN_GEM_DEBUGGING']
 
-require 'listen/internals/thread_pool'
+require 'sass-listen/internals/thread_pool'
 
 def ci?
   ENV['CI']

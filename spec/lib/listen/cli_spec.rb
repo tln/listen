@@ -1,4 +1,4 @@
-require 'listen/cli'
+require 'sass-listen/cli'
 
 RSpec.describe Listen::CLI do
   let(:options) { {} }

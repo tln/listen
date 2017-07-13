@@ -1,4 +1,4 @@
-require 'listen/event/config'
+require 'sass-listen/event/config'
 
 RSpec.describe Listen::Event::Config do
   let(:listener) { instance_double(Listen::Listener) }

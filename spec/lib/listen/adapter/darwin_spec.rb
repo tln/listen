@@ -1,7 +1,7 @@
 # This is just so stubs work
 require 'rb-fsevent'
 
-require 'listen/adapter/darwin'
+require 'sass-listen/adapter/darwin'
 
 include Listen
 

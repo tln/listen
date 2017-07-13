@@ -1,5 +1,5 @@
-require 'listen/file'
-require 'listen/directory'
+require 'sass-listen/file'
+require 'sass-listen/directory'
 
 module Listen
   # TODO: rename to Snapshot

@@ -1,6 +1,6 @@
-require 'listen/adapter'
-require 'listen/adapter/base'
-require 'listen/adapter/config'
+require 'sass-listen/adapter'
+require 'sass-listen/adapter/base'
+require 'sass-listen/adapter/config'
 
 require 'forwardable'
 
