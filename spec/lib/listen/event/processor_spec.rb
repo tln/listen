@@ -1,9 +1,9 @@
 require 'sass-listen/event/processor'
 require 'sass-listen/event/config'
 
-RSpec.describe Listen::Event::Processor do
+RSpec.describe SassListen::Event::Processor do
   let(:event_queue) { instance_double(::Queue, 'event_queue') }
-  let(:config) { instance_double(Listen::Event::Config) }
+  let(:config) { instance_double(SassListen::Event::Config) }
   let(:reasons) { instance_double(::Queue, 'reasons') }
 
   subject { described_class.new(config, reasons) }

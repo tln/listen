@@ -1,9 +1,9 @@
 require 'sass-listen/event/config'
 
-RSpec.describe Listen::Event::Config do
-  let(:listener) { instance_double(Listen::Listener) }
-  let(:event_queue) { instance_double(Listen::Event::Queue) }
-  let(:queue_optimizer) { instance_double(Listen::QueueOptimizer) }
+RSpec.describe SassListen::Event::Config do
+  let(:listener) { instance_double(SassListen::Listener) }
+  let(:event_queue) { instance_double(SassListen::Event::Queue) }
+  let(:queue_optimizer) { instance_double(SassListen::QueueOptimizer) }
   let(:wait_for_delay) { 1.234 }
 
   context 'with a given block' do

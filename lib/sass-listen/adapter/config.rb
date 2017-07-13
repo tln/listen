@@ -1,6 +1,6 @@
 require 'pathname'
 
-module Listen
+module SassListen
   module Adapter
     class Config
       attr_reader :directories

@@ -1,6 +1,6 @@
 # encoding: UTF-8
 
-RSpec.describe 'Listen', acceptance: true do
+RSpec.describe 'SassListen', acceptance: true do
   let(:base_options) { { latency: 0.1 } }
   let(:polling_options) { {} }
   let(:options) { {} }
@@ -21,7 +21,7 @@ RSpec.describe 'Listen', acceptance: true do
       let(:wrapper) { setup_listener(all_options, callback) }
 
       it 'warns the backtrace' do
-        expect(Listen::Logger).to receive(:error).
+        expect(SassListen::Logger).to receive(:error).
           with(/exception while processing events: foo.*Backtrace:/)
         wrapper.listen { touch 'file.rb' }
       end

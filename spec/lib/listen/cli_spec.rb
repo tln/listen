@@ -1,8 +1,8 @@
 require 'sass-listen/cli'
 
-RSpec.describe Listen::CLI do
+RSpec.describe SassListen::CLI do
   let(:options) { {} }
-  let(:forwarder) { instance_double(Listen::Forwarder) }
+  let(:forwarder) { instance_double(SassListen::Forwarder) }
 
   before do
     allow(forwarder).to receive(:start)
@@ -12,7 +12,7 @@ RSpec.describe Listen::CLI do
     context 'not specified' do
       let(:options) { %w[] }
       it 'is set to local directory' do
-        expect(Listen::Forwarder).to receive(:new) do |options|
+        expect(SassListen::Forwarder).to receive(:new) do |options|
           expect(options[:directory]).to eq('.')
           forwarder
         end
@@ -23,7 +23,7 @@ RSpec.describe Listen::CLI do
     context 'with a single directory' do
       let(:options) { %w[-d app] }
       it 'is set to app' do
-        expect(Listen::Forwarder).to receive(:new) do |options|
+        expect(SassListen::Forwarder).to receive(:new) do |options|
           expect(options[:directory]).to eq(['app'])
           forwarder
         end
@@ -34,7 +34,7 @@ RSpec.describe Listen::CLI do
     context 'with a multiple directories' do
       let(:options) { %w[-d app spec] }
       it 'is set to an array of the directories' do
-        expect(Listen::Forwarder).to receive(:new) do |options|
+        expect(SassListen::Forwarder).to receive(:new) do |options|
           expect(options[:directory]).to eq(%w(app spec))
           forwarder
         end
@@ -47,7 +47,7 @@ RSpec.describe Listen::CLI do
     context 'without relative option' do
       let(:options) { %w[] }
       it 'is set to false' do
-        expect(Listen::Forwarder).to receive(:new) do |options|
+        expect(SassListen::Forwarder).to receive(:new) do |options|
           expect(options[:relative]).to be(false)
           forwarder
         end
@@ -59,7 +59,7 @@ RSpec.describe Listen::CLI do
       let(:options) { %w[-r] }
 
       it 'is set to true' do
-        expect(Listen::Forwarder).to receive(:new) do |options|
+        expect(SassListen::Forwarder).to receive(:new) do |options|
           expect(options[:relative]).to be(true)
           forwarder
         end
@@ -71,7 +71,7 @@ RSpec.describe Listen::CLI do
       let(:options) { %w[--relative] }
 
       it 'supports -r option' do
-        expect(Listen::Forwarder).to receive(:new) do |options|
+        expect(SassListen::Forwarder).to receive(:new) do |options|
           expect(options[:relative]).to be(true)
           forwarder
         end
@@ -79,7 +79,7 @@ RSpec.describe Listen::CLI do
       end
 
       it 'supports --relative option' do
-        expect(Listen::Forwarder).to receive(:new) do |options|
+        expect(SassListen::Forwarder).to receive(:new) do |options|
           expect(options[:relative]).to be(true)
           forwarder
         end
@@ -89,9 +89,9 @@ RSpec.describe Listen::CLI do
   end
 end
 
-RSpec.describe Listen::Forwarder do
+RSpec.describe SassListen::Forwarder do
   let(:logger) { instance_double(Logger) }
-  let(:listener) { instance_double(Listen::Listener) }
+  let(:listener) { instance_double(SassListen::Listener) }
 
   before do
     allow(Logger).to receive(:new).and_return(logger)
@@ -103,9 +103,9 @@ RSpec.describe Listen::Forwarder do
     allow(listener).to receive(:processing?).and_return false
   end
 
-  it 'passes relative option to Listen' do
+  it 'passes relative option to SassListen' do
     value = double('value')
-    expect(Listen).to receive(:to).
+    expect(SassListen).to receive(:to).
       with(nil, hash_including(relative: value)).
       and_return(listener)
 

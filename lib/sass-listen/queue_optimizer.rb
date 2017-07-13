@@ -1,4 +1,4 @@
-module Listen
+module SassListen
   class QueueOptimizer
     class Config
       def initialize(adapter_class, silencer)
@@ -15,7 +15,7 @@ module Listen
       end
 
       def debug(*args, &block)
-        Listen.logger.debug(*args, &block)
+        SassListen.logger.debug(*args, &block)
       end
     end
 

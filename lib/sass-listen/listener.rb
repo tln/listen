@@ -17,14 +17,14 @@ require 'sass-listen/event/config'
 
 require 'sass-listen/listener/config'
 
-module Listen
+module SassListen
   class Listener
-    include Listen::FSM
+    include SassListen::FSM
 
     # Initializes the directories listener.
     #
     # @param [String] directory the directories to listen to
-    # @param [Hash] options the listen options (see Listen::Listener::Options)
+    # @param [Hash] options the listen options (see SassListen::Listener::Options)
     #
     # @yield [modified, added, removed] the changed files
     # @yieldparam [Array<String>] modified the list of modified files

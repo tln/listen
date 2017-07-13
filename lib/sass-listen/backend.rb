@@ -6,7 +6,7 @@ require 'forwardable'
 
 # This class just aggregates configuration object to avoid Listener specs
 # from exploding with huge test setup blocks
-module Listen
+module SassListen
   class Backend
     def initialize(directories, queue, silencer, config)
       adapter_select_opts = config.adapter_select_options

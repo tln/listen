@@ -1,4 +1,4 @@
-module Listen
+module SassListen
   module Adapter
     # @see https://github.com/nex3/rb-inotify
     class Linux < Base
@@ -22,7 +22,7 @@ module Listen
         '/wiki/Increasing-the-amount-of-inotify-watchers'
 
       INOTIFY_LIMIT_MESSAGE = <<-EOS.gsub(/^\s*/, '')
-        FATAL: Listen error: unable to monitor directories for changes.
+        FATAL: SassListen error: unable to monitor directories for changes.
         Visit #{WIKI_URL} for info on how to fix this.
       EOS
 

@@ -1,7 +1,7 @@
 require 'thread'
 require 'sass-listen/internals/thread_pool'
 
-module Listen
+module SassListen
   module Adapter
     # Adapter implementation for Mac OS X `FSEvents`.
     #
@@ -74,7 +74,7 @@ module Listen
         workers.each do |worker|
           # NOTE: while passing local variables to the block below is not
           # thread safe, using 'worker' from the enumerator above is ok
-          Listen::Internals::ThreadPool.add { _run_worker(worker) }
+          SassListen::Internals::ThreadPool.add { _run_worker(worker) }
         end
       end
 

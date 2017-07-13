@@ -1,4 +1,4 @@
-RSpec.describe Listen::Adapter::BSD do
+RSpec.describe SassListen::Adapter::BSD do
   describe 'class' do
     subject { described_class }
 

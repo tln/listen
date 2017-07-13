@@ -1,3 +1,3 @@
-module Listen
+module SassListen
   VERSION = '3.0.8'
 end

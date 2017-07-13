@@ -1,4 +1,4 @@
-module Listen
+module SassListen
   module Event
     class Processor
       def initialize(config, reasons)
@@ -19,7 +19,7 @@ module Listen
           _process_changes
         end
       rescue Stopped
-        Listen::Logger.debug('Processing stopped')
+        SassListen::Logger.debug('Processing stopped')
       end
 
       private
@@ -113,7 +113,7 @@ module Listen
 
         block_start = _timestamp
         config.call(*result)
-        Listen::Logger.debug "Callback took #{_timestamp - block_start} sec"
+        SassListen::Logger.debug "Callback took #{_timestamp - block_start} sec"
       end
 
       attr_reader :config

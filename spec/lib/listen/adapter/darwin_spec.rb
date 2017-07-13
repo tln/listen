@@ -3,7 +3,7 @@ require 'rb-fsevent'
 
 require 'sass-listen/adapter/darwin'
 
-include Listen
+include SassListen
 
 RSpec.describe Adapter::Darwin do
   describe 'class' do
@@ -17,9 +17,9 @@ RSpec.describe Adapter::Darwin do
   end
 
   let(:options) { {} }
-  let(:config) { instance_double(Listen::Adapter::Config) }
+  let(:config) { instance_double(SassListen::Adapter::Config) }
   let(:queue) { instance_double(::Queue) }
-  let(:silencer) { instance_double(Listen::Silencer) }
+  let(:silencer) { instance_double(SassListen::Silencer) }
 
   let(:dir1) { fake_path('/foo/dir1', cleanpath: fake_path('/foo/dir1')) }
   let(:directories) { [dir1] }

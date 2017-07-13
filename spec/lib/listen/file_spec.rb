@@ -1,7 +1,7 @@
-RSpec.describe Listen::File do
+RSpec.describe SassListen::File do
   let(:record) do
     instance_double(
-      Listen::Record,
+      SassListen::Record,
       root: '/foo/bar',
       file_data: record_data,
       add_dir: true,
@@ -219,7 +219,7 @@ RSpec.describe Listen::File do
       instance_double(File::Stat, mtime: mtime, atime: atime, ctime: ctime)
     end
 
-    subject { Listen::File.inaccurate_mac_time?(stat) }
+    subject { SassListen::File.inaccurate_mac_time?(stat) }
 
     context 'with no accurate times' do
       let(:mtime) { Time.at(1_234_567.0) }

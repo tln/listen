@@ -2,11 +2,11 @@ require 'thor'
 require 'sass-listen'
 require 'logger'
 
-module Listen
+module SassListen
   class CLI < Thor
     default_task :start
 
-    desc 'start', 'Starts Listen'
+    desc 'start', 'Starts SassListen'
 
     class_option :verbose,
                  type:    :boolean,
@@ -27,7 +27,7 @@ module Listen
                  banner:  'Convert paths relative to current directory'
 
     def start
-      Listen::Forwarder.new(options).start
+      SassListen::Forwarder.new(options).start
     end
   end
 
@@ -52,7 +52,7 @@ module Listen
         end
       end
 
-      listener = Listen.to(
+      listener = SassListen.to(
         directory,
         relative: relative,
         &callback)

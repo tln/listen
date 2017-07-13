@@ -1,7 +1,7 @@
 require 'sass-listen/file'
 require 'sass-listen/directory'
 
-module Listen
+module SassListen
   # TODO: rename to Snapshot
   class Change
     # TODO: test this class for coverage
@@ -35,13 +35,13 @@ module Listen
       cookie = options[:cookie]
 
       if !cookie && config.silenced?(rel_path, type)
-        Listen::Logger.debug {  "(silenced): #{rel_path.inspect}" }
+        SassListen::Logger.debug {  "(silenced): #{rel_path.inspect}" }
         return
       end
 
       path = watched_dir + rel_path
 
-      Listen::Logger.debug do
+      SassListen::Logger.debug do
         log_details = options[:silence] && 'recording' || change || 'unknown'
         "#{log_details}: #{type}:#{path} (#{options.inspect})"
       end
@@ -67,7 +67,7 @@ module Listen
         __method__,
         exinspect,
         ex.backtrace * "\n")
-      Listen::Logger.error(msg)
+      SassListen::Logger.error(msg)
       raise
     end
 

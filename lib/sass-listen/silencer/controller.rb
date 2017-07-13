@@ -1,4 +1,4 @@
-module Listen
+module SassListen
   class Silencer
     class Controller
       def initialize(silencer, default_options)

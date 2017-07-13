@@ -1,11 +1,11 @@
 require 'sass-listen/adapter/config'
 
-RSpec.describe Listen::Adapter::Config do
+RSpec.describe SassListen::Adapter::Config do
   let(:directories) { [path1, path2] }
   let(:queue) { instance_double(Queue) }
-  let(:silencer) { instance_double(Listen::Silencer) }
+  let(:silencer) { instance_double(SassListen::Silencer) }
 
-  # NOTE: defaults are handled later in Listen::Options
+  # NOTE: defaults are handled later in SassListen::Options
   let(:adapter_options) { { latency: 1.234 } }
 
   subject do

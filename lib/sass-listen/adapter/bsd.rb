@@ -2,7 +2,7 @@
 # @see http://www.freebsd.org/cgi/man.cgi?query=kqueue
 # @see https://github.com/mat813/rb-kqueue/blob/master/lib/rb-kqueue/queue.rb
 #
-module Listen
+module SassListen
   module Adapter
     class BSD < Base
       OS_REGEXP = /bsd|dragonfly/i

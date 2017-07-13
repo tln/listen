@@ -1,4 +1,4 @@
-module Listen
+module SassListen
   class Listener
     class Config
       DEFAULTS = {

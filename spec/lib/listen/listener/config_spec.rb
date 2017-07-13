@@ -1,5 +1,5 @@
 require 'sass-listen/listener/config'
-RSpec.describe Listen::Listener::Config do
+RSpec.describe SassListen::Listener::Config do
   describe 'options' do
     context 'custom options' do
       subject do

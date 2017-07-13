@@ -1,4 +1,4 @@
-module Listen
+module SassListen
   # @private api
   class Record
     # Represents a directory entry (dir or file)

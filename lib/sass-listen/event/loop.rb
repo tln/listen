@@ -3,7 +3,7 @@ require 'thread'
 require 'timeout'
 require 'sass-listen/event/processor'
 
-module Listen
+module SassListen
   module Event
     class Loop
       class Error < RuntimeError
@@ -42,7 +42,7 @@ module Listen
           _wait_for_changes(q, config)
         end
 
-        Listen::Logger.debug('Waiting for processing to start...')
+        SassListen::Logger.debug('Waiting for processing to start...')
         Timeout.timeout(5) { q.pop }
       end
 
@@ -105,7 +105,7 @@ module Listen
           indent,
           ex.backtrace * indent
         )
-        Listen::Logger.error(msg)
+        SassListen::Logger.error(msg)
       end
 
       def _wakeup(reason)

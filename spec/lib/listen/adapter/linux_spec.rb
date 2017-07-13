@@ -1,4 +1,4 @@
-RSpec.describe Listen::Adapter::Linux do
+RSpec.describe SassListen::Adapter::Linux do
   describe 'class' do
     subject { described_class }
 
@@ -22,11 +22,11 @@ RSpec.describe Listen::Adapter::Linux do
     # just so cleanpath works in above double
     let(:real_dir1) { instance_double(Pathname, 'dir1', to_s: '/foo/dir1') }
 
-    let(:config) { instance_double(Listen::Adapter::Config) }
+    let(:config) { instance_double(SassListen::Adapter::Config) }
     let(:queue) { instance_double(Queue) }
-    let(:silencer) { instance_double(Listen::Silencer) }
-    let(:snapshot) { instance_double(Listen::Change) }
-    let(:record) { instance_double(Listen::Record) }
+    let(:silencer) { instance_double(SassListen::Silencer) }
+    let(:snapshot) { instance_double(SassListen::Change) }
+    let(:record) { instance_double(SassListen::Record) }
 
     # TODO: fix other adapters too!
     subject { described_class.new(config) }
@@ -71,10 +71,10 @@ RSpec.describe Listen::Adapter::Linux do
         allow(config).to receive(:queue).and_return(queue)
         allow(config).to receive(:silencer).and_return(silencer)
 
-        allow(Listen::Record).to receive(:new).with(dir1).and_return(record)
-        allow(Listen::Change::Config).to receive(:new).with(queue, silencer).
+        allow(SassListen::Record).to receive(:new).with(dir1).and_return(record)
+        allow(SassListen::Change::Config).to receive(:new).with(queue, silencer).
           and_return(config)
-        allow(Listen::Change).to receive(:new).with(config, record).
+        allow(SassListen::Change).to receive(:new).with(config, record).
           and_return(snapshot)
 
         allow(subject).to receive(:require).with('rb-inotify')

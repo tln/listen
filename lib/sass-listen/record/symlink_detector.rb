@@ -1,6 +1,6 @@
 require 'set'
 
-module Listen
+module SassListen
   # @private api
   class Record
     class SymlinkDetector

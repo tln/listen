@@ -2,7 +2,7 @@ RSpec::Matchers.define :accept do |type, path|
   match { |actual| !actual.silenced?(Pathname(path), type) }
 end
 
-RSpec.describe Listen::Silencer do
+RSpec.describe SassListen::Silencer do
   let(:options) { {} }
   before { subject.configure(options) }
 

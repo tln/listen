@@ -1,4 +1,4 @@
-module Listen
+module SassListen
   module Event
     class Config
       def initialize(

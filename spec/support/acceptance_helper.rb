@@ -92,7 +92,7 @@ end
 # happen within 1 second (which makes testing and debugging difficult).
 #
 def _sleep_until_next_second(path)
-  Listen::File.inaccurate_mac_time?(path)
+  SassListen::File.inaccurate_mac_time?(path)
 
   t = Time.now
   diff = t.to_f - t.to_i
@@ -165,7 +165,7 @@ class ListenerWrapper
     @timed_changes = TimedChanges.new
 
     if callback
-      @listener = Listen.send(*args) do  |modified, added, removed|
+      @listener = SassListen.send(*args) do  |modified, added, removed|
         # Add changes to trigger frozen Hash error, making sure lag is enough
         _add_changes(:modified, modified, changes)
         _add_changes(:added, added, changes)
@@ -176,7 +176,7 @@ class ListenerWrapper
         end
       end
     else
-      @listener = Listen.send(*args)
+      @listener = SassListen.send(*args)
     end
   end
 
@@ -196,7 +196,7 @@ class ListenerWrapper
       # Polling sleep (default: 1s)
       backend = @listener.instance_variable_get(:@backend)
       adapter = backend.instance_variable_get(:@adapter)
-      sleep(1.0) if adapter.is_a?(Listen::Adapter::Polling)
+      sleep(1.0) if adapter.is_a?(SassListen::Adapter::Polling)
 
       # Lag should include:
       #  0.1s - 0.2s if the test needs Listener queue to be processed
@@ -259,7 +259,7 @@ def _sleep_to_separate_events
   #
   # The minimum for this is the time it takes between a syscall
   # changing the filesystem ... and ... an async
-  # Listen::File.scan to finish comparing the file with the
+  # SassListen::File.scan to finish comparing the file with the
   # Record
   #
   # This necessary for:

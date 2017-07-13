@@ -1,10 +1,10 @@
 require 'sass-listen/event/queue'
 
 # TODO: not part of listener really
-RSpec.describe Listen::Event::Queue do
+RSpec.describe SassListen::Event::Queue do
   let(:queue) { instance_double(Thread::Queue, 'my queue') }
 
-  let(:config) { instance_double(Listen::Event::Queue::Config) }
+  let(:config) { instance_double(SassListen::Event::Queue::Config) }
 
   let(:relative) { false }
 

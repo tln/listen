@@ -1,4 +1,4 @@
-include Listen
+include SassListen
 
 RSpec.describe Listener do
 
@@ -23,7 +23,7 @@ RSpec.describe Listener do
   let(:record) { instance_double(Record, build: true, root: 'dir2') }
   let(:silencer) { instance_double(Silencer, configure: nil) }
 
-  let(:backend_class) { class_double('Listen::Backend') }
+  let(:backend_class) { class_double('SassListen::Backend') }
 
   let(:backend) { instance_double(Backend) }
 

@@ -1,6 +1,6 @@
-RSpec.describe Listen::Record do
+RSpec.describe SassListen::Record do
   let(:dir) { instance_double(Pathname, to_s: '/dir') }
-  let(:record) { Listen::Record.new(dir) }
+  let(:record) { SassListen::Record.new(dir) }
 
   def dir_entries_for(hash)
     hash.each do |dir, entries|

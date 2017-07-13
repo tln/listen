@@ -1,5 +1,5 @@
 # Code copied from https://github.com/celluloid/celluloid-fsm
-module Listen
+module SassListen
   module FSM
     DEFAULT_STATE = :default # Default state name unless one is explicitly set
 

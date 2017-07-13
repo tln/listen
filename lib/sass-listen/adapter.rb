@@ -5,10 +5,10 @@ require 'sass-listen/adapter/linux'
 require 'sass-listen/adapter/polling'
 require 'sass-listen/adapter/windows'
 
-module Listen
+module SassListen
   module Adapter
     OPTIMIZED_ADAPTERS = [Darwin, Linux, BSD, Windows]
-    POLLING_FALLBACK_MESSAGE = 'Listen will be polling for changes.'\
+    POLLING_FALLBACK_MESSAGE = 'SassListen will be polling for changes.'\
       'Learn more at https://github.com/guard/listen#listen-adapters.'
 
     def self.select(options = {})
@@ -33,11 +33,11 @@ module Listen
 
     def self._warn_polling_fallback(options)
       msg = options.fetch(:polling_fallback_message, POLLING_FALLBACK_MESSAGE)
-      Kernel.warn "[Listen warning]:\n  #{msg}" if msg
+      Kernel.warn "[SassListen warning]:\n  #{msg}" if msg
     end
 
     def self._log(type, message)
-      Listen::Logger.send(type, message)
+      SassListen::Logger.send(type, message)
     end
   end
 end

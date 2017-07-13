@@ -1,4 +1,4 @@
-include Listen
+include SassListen
 
 RSpec.describe Adapter::Polling do
   describe 'class' do
@@ -17,14 +17,14 @@ RSpec.describe Adapter::Polling do
   # just so cleanpath works in above double
   let(:real_dir1) { instance_double(Pathname, 'dir1', to_s: '/foo/dir1') }
 
-  let(:config) { instance_double(Listen::Adapter::Config) }
+  let(:config) { instance_double(SassListen::Adapter::Config) }
   let(:directories) { [dir1] }
   let(:options) { {} }
   let(:queue) { instance_double(Queue) }
-  let(:silencer) { instance_double(Listen::Silencer) }
-  let(:snapshot) { instance_double(Listen::Change) }
+  let(:silencer) { instance_double(SassListen::Silencer) }
+  let(:snapshot) { instance_double(SassListen::Change) }
 
-  let(:record) { instance_double(Listen::Record) }
+  let(:record) { instance_double(SassListen::Record) }
 
   context 'with a valid configuration' do
     before do
@@ -33,11 +33,11 @@ RSpec.describe Adapter::Polling do
       allow(config).to receive(:queue).and_return(queue)
       allow(config).to receive(:silencer).and_return(silencer)
 
-      allow(Listen::Record).to receive(:new).with(dir1).and_return(record)
+      allow(SassListen::Record).to receive(:new).with(dir1).and_return(record)
 
-      allow(Listen::Change).to receive(:new).with(config, record).
+      allow(SassListen::Change).to receive(:new).with(config, record).
         and_return(snapshot)
-      allow(Listen::Change::Config).to receive(:new).with(queue, silencer).
+      allow(SassListen::Change::Config).to receive(:new).with(queue, silencer).
         and_return(config)
     end
 

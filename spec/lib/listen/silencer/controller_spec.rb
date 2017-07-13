@@ -1,7 +1,7 @@
 require 'sass-listen/silencer/controller'
 
-RSpec.describe Listen::Silencer::Controller do
-  let(:silencer) { instance_double(Listen::Silencer) }
+RSpec.describe SassListen::Silencer::Controller do
+  let(:silencer) { instance_double(SassListen::Silencer) }
 
   describe 'append_ignores' do
     context 'with no previous :ignore rules' do

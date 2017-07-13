@@ -1,4 +1,4 @@
-module Listen
+module SassListen
   class Silencer
     # The default list of directories that get ignored.
     DEFAULT_IGNORED_DIRECTORIES = %r{^(?:

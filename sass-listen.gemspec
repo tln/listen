@@ -5,7 +5,7 @@ require 'sass-listen/version'
 
 Gem::Specification.new do |s|
   s.name        = 'sass-listen'
-  s.version     = Listen::VERSION
+  s.version     = SassListen::VERSION
   s.license     = 'MIT'
   s.author      = 'Thibaud Guillaume-Gentil'
   s.email       = 'thibaud@thibaud.gg'

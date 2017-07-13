@@ -2,7 +2,7 @@ require 'thread'
 
 require 'forwardable'
 
-module Listen
+module SassListen
   module Event
     class Queue
       class Config

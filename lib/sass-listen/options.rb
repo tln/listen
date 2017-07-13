@@ -1,4 +1,4 @@
-module Listen
+module SassListen
   class Options
     def initialize(opts, defaults)
       @options = {}
@@ -10,7 +10,7 @@ module Listen
       return if given_options.empty?
 
       msg = "Unknown options: #{given_options.inspect}"
-      Listen::Logger.warn msg
+      SassListen::Logger.warn msg
       fail msg
     end
 

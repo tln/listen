@@ -10,26 +10,26 @@ require 'sass-listen/internals/thread_pool'
 # requiring this file. If you need to set a custom logger,
 # require the listen/logger file and set the logger before requiring
 # this file.
-Listen.setup_default_logger_if_unset
+SassListen.setup_default_logger_if_unset
 
 # Won't print anything by default because of level - unless you've set
 # LISTEN_GEM_DEBUGGING or provided your own logger with a high enough level
-Listen::Logger.info "Listen loglevel set to: #{Listen.logger.level}"
-Listen::Logger.info "Listen version: #{Listen::VERSION}"
+SassListen::Logger.info "SassListen loglevel set to: #{SassListen.logger.level}"
+SassListen::Logger.info "SassListen version: #{SassListen::VERSION}"
 
-module Listen
+module SassListen
   class << self
     # Listens to file system modifications on a either single directory or
     # multiple directories.
     #
-    # @param (see Listen::Listener#new)
+    # @param (see SassListen::Listener#new)
     #
     # @yield [modified, added, removed] the changed files
     # @yieldparam [Array<String>] modified the list of modified files
     # @yieldparam [Array<String>] added the list of added files
     # @yieldparam [Array<String>] removed the list of removed files
     #
-    # @return [Listen::Listener] the listener
+    # @return [SassListen::Listener] the listener
     #
     def to(*args, &block)
       @listeners ||= []

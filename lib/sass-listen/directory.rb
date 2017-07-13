@@ -1,6 +1,6 @@
 require 'set'
 
-module Listen
+module SassListen
   # TODO: refactor (turn it into a normal object, cache the stat, etc)
   class Directory
     def self.scan(snapshot, rel_path, options)
@@ -14,7 +14,7 @@ module Listen
       path = dir + rel_path
       current = Set.new(_children(path))
 
-      Listen::Logger.debug do
+      SassListen::Logger.debug do
         format('%s: %s(%s): %s -> %s',
                (options[:silence] ? 'Recording' : 'Scanning'),
                rel_path, options.inspect, previous.inspect, current.inspect)
@@ -47,7 +47,7 @@ module Listen
       _async_changes(snapshot, path, previous, options)
       _change(snapshot, :file, rel_path, options)
     rescue
-      Listen::Logger.warn do
+      SassListen::Logger.warn do
         format('scan DIED: %s:%s', $ERROR_INFO, $ERROR_POSITION * "\n")
       end
       raise

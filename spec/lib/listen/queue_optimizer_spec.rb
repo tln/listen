@@ -1,5 +1,5 @@
-RSpec.describe Listen::QueueOptimizer do
-  let(:config) { instance_double(Listen::QueueOptimizer::Config) }
+RSpec.describe SassListen::QueueOptimizer do
+  let(:config) { instance_double(SassListen::QueueOptimizer::Config) }
   subject { described_class.new(config) }
 
   # watched dir

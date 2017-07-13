@@ -1,6 +1,6 @@
 require 'digest/md5'
 
-module Listen
+module SassListen
   class File
     def self.change(record, rel_path)
       path = Pathname.new(record.root) + rel_path
@@ -35,7 +35,7 @@ module Listen
       # when file was changed and when the event was triggered.
       #
       # If a file is saved at ???14.998, by the time the event is
-      # actually received by Listen, the time could already be e.g.
+      # actually received by SassListen, the time could already be e.g.
       # ???15.7.
       #
       # And since Darwin adapter uses directory scanning, the file
@@ -64,7 +64,7 @@ module Listen
       record.unset_path(rel_path)
       :removed
     rescue
-      Listen::Logger.debug "lstat failed for: #{rel_path} (#{$ERROR_INFO})"
+      SassListen::Logger.debug "lstat failed for: #{rel_path} (#{$ERROR_INFO})"
       raise
     end
 

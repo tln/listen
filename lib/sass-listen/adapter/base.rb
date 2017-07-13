@@ -2,7 +2,7 @@ require 'sass-listen/options'
 require 'sass-listen/record'
 require 'sass-listen/change'
 
-module Listen
+module SassListen
   module Adapter
     class Base
       attr_reader :options
@@ -21,7 +21,7 @@ module Listen
         fail 'No directories to watch!' if config.directories.empty?
 
         defaults = self.class.const_get('DEFAULTS')
-        @options = Listen::Options.new(config.adapter_options, defaults)
+        @options = SassListen::Options.new(config.adapter_options, defaults)
       rescue
         _log_exception 'adapter config failed: %s:%s called from: %s', caller
         raise
@@ -70,7 +70,7 @@ module Listen
         @started = true
 
         calling_stack = caller.dup
-        Listen::Internals::ThreadPool.add do
+        SassListen::Internals::ThreadPool.add do
           begin
             @snapshots.values.each do |snapshot|
               _timed('Record.build()') { snapshot.record.build }
@@ -102,9 +102,9 @@ module Listen
         start = Time.now.to_f
         yield
         diff = Time.now.to_f - start
-        Listen::Logger.info format('%s: %.05f seconds', title, diff)
+        SassListen::Logger.info format('%s: %.05f seconds', title, diff)
       rescue
-        Listen::Logger.warn "#{title} crashed: #{$ERROR_INFO.inspect}"
+        SassListen::Logger.warn "#{title} crashed: #{$ERROR_INFO.inspect}"
         raise
       end
 
@@ -130,7 +130,7 @@ module Listen
       end
 
       def self._log(*args, &block)
-        Listen::Logger.send(*args, &block)
+        SassListen::Logger.send(*args, &block)
       end
     end
   end

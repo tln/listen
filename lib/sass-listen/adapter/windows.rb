@@ -1,4 +1,4 @@
-module Listen
+module SassListen
   module Adapter
     # Adapter implementation for Windows `wdm`.
     #

@@ -2,7 +2,7 @@ require 'thread'
 require 'sass-listen/record/entry'
 require 'sass-listen/record/symlink_detector'
 
-module Listen
+module SassListen
   class Record
     # TODO: one Record object per watched directory?
     # TODO: deprecate

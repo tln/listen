@@ -1,4 +1,4 @@
-module Listen
+module SassListen
   # @private api
   module Internals
     module ThreadPool

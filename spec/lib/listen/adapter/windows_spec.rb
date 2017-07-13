@@ -1,4 +1,4 @@
-RSpec.describe Listen::Adapter::Windows do
+RSpec.describe SassListen::Adapter::Windows do
   describe 'class' do
     subject { described_class }
 

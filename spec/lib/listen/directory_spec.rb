@@ -1,4 +1,4 @@
-include Listen
+include SassListen
 
 RSpec.describe Directory do
   def fake_file_stat(name, options = {})

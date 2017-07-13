@@ -1,4 +1,4 @@
-module Listen
+module SassListen
   module Adapter
     # Polling Adapter that works cross-platform and
     # has no dependencies. This is the adapter that
