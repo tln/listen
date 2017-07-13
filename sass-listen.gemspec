@@ -18,7 +18,6 @@ Gem::Specification.new do |s|
   end + %w(CHANGELOG.md CONTRIBUTING.md LICENSE.txt README.md)
 
   s.test_files   = []
-  s.executable   = 'listen'
   s.require_path = 'lib'
 
   s.required_ruby_version = '>= 1.9.3'
